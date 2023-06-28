@@ -74,4 +74,35 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-We have numerical results. Out of all the people, the smallest group was the other group.Tthe other group is 7% of all groups. The blacks were the next smallest groups and the whites were the biggest group. But comparing the blacks and the other groups, their percentage is about the same. Whereas, it seems like the whites were eating out the most.
+We have numerical results. Out of all the people, the smallest group was the other group.The other group is 7% of all groups. The blacks were the next smallest groups and the whites were the biggest group. But comparing the blacks and the other groups, their percentage is about the same. Whereas, it seems like the whites were eating out the most.
+
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+There's a really small number for the P-value of 00002287. The statistics 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
