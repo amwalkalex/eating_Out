@@ -22,25 +22,51 @@ date: "`r Sys.Date()`"
 $H_0$ There is no difference among the various races with frequency of eating out  
 $H_A$ There is a statistical difference between at least two races with the frequency of eating out  
 
-
 ```{r include=FALSE,echo=FALSE}
 source(file="fisherXY.R")
 require(tidyverse)
 require(tigerstats)
 require(knitr)
+require(haven)
 require(foreign)
 ```
-```{r, eval=FALSE}
-GSS <-read.dta(file="GSSxxxx.dta")
-GSS <- droplevels(GSS)
+
+
+```{r, eval=TRUE}
+#GSS <-(read_dta(file="GSS1998.dta))
+GSS<- readstata13::read.dta13(file="GSS1998.dta")
+GSS <-droplevels(GSS)
 mydata <- select(GSS,race,age,eatout)
-mydata <- na.omit(mydata)
+mydata <-na.omit(mydata)
+
 ```
 
 
+```{r}
+barchartGC(~race + eatout,data=mydata)
+barchartGC(~race + eatout,data=mydata, type="percent")
+
+```
+
+It seems that 18% of the white people were not eating out whereas 60% of the back and the other people was eating out. There was not much difference but it does seem that the white people were eating out more than the other 2 groups of people.
 
 
+```{r}
+dd2 <- mydata %>% group_by(race,eatout) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=race,y=count,fill=eatout))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=race,y=prcnt*100,fill=eatout)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+The one on the left is by count and the one on the right is by percentage.
 
 
 
