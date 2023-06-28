@@ -91,9 +91,11 @@ fisherXY(mydata$race,mydata$eatout)
 
 We have 945 white people that ate out and 192 that did not. We had 75 other ate out and 29 didn't. The odds of a white guy eating out is 2.2 times as often as a black guy eating out. The white people and the other people are different too. The white people is out as much as 2. 9 times more than the other people do. The difference between the black and the other people is a p-Value that is greater. 
 
+```{r}
+fisherXY(mydata$race,mydata$eatout,printAll = TRUE)
+```
 
-
-
+The odds of an other guy and a black guy eating out is 1. Which means its still is different. 
 
 
 
