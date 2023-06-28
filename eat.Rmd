@@ -95,18 +95,5 @@ We have 945 white people that ate out and 192 that did not. We had 75 other ate 
 fisherXY(mydata$race,mydata$eatout,printAll = TRUE)
 ```
 
-The odds of an other guy and a black guy eating out is 1. Which means its still is different. 
-
-
-
-
-
-
-
-
-
-
-
-
-
+The odds of an other guy and a black guy eating out is 1. Which means its still is different. After loooking at all the 3 different groups, it was clear that while the white people ate out muchmore than the blacks and the other people, the blacks and the other people did not eat out much more than one another. There was a very small didffernce between the black people eating out and the other people eating out. However, the Black people did eat out more than the other people.
 
